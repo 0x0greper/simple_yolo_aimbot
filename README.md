@@ -1,2 +1,2 @@
 # simple_yolo_aimbot
-A PoC of a simple aimbot made for assaultcube with yolo v8 
+A PoC of a simple aimbot made for assaultcube version 1.2 with yolo v8 
