@@ -4,6 +4,8 @@
 
 This is a proof-of-concept aimbot for **AssaultCube 1.2**, specifically designed to work on systems with NVIDIA GPUs. The project also includes additional scripts to help you train your own YOLO model. Have fun, and enjoy exploring the possibilities! 😎🎮
 
+![demo](demo.gif)
+
 # Installation:
 1. Install Python:
 Ensure you have Python 3.11.9 installed. This version has been tested for compatibility with the aimbot.
