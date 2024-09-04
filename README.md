@@ -9,9 +9,7 @@ Ensure you have Python 3.11.9 installed. This version has been tested for compat
 2. Clone the Repository:
 Download the project files using Git:
 
-bash
-Copy code
-git clone https://github.com/0x0greper/simple_yolo_aimbot.git
+```git clone https://github.com/0x0greper/simple_yolo_aimbot.git```
 3. Ensure NVIDIA Drivers Are Installed:
 Verify that your NVIDIA GPU drivers are up to date.
 
