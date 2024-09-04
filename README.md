@@ -1,6 +1,6 @@
 # Simple YOLO Aimbot PoC for AssaultCube 1.2
 
-![Logo](.logo.png)
+![Logo](logo.png)
 
 This is a proof-of-concept aimbot for **AssaultCube 1.2**, specifically designed to work on systems with NVIDIA GPUs. The project also includes additional scripts to help you train your own YOLO model. Have fun, and enjoy exploring the possibilities! 😎🎮
 
