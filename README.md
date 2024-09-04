@@ -56,7 +56,7 @@ Run AssaultCube.
 Go to the video settings and disable fullscreen mode.
 Resize the game window so it’s about half the size of your monitor. This is necessary to view the AI-generated overlay on a secondary window.
 
-#Usage:
+# Usage:
 **Detection Mode:**
 To run the real-time detection of in-game objects, execute the detect.py script while AssaultCube is running. A secondary window will appear, displaying a mirror of the game with AI-generated bounding boxes overlaying detected objects.
 
