@@ -16,8 +16,8 @@ if not os.path.exists(save_directory):
 # Screenshot counter
 screenshot_counter = 1
 
-# Function to get the window rectangle by process name
-def get_window_rect_by_process(process_name):
+# Function to get the client area rectangle by process name
+def get_window_client_rect_by_process(process_name):
     for proc in psutil.process_iter(['pid', 'name']):
         if proc.info['name'] == process_name:
             pid = proc.info['pid']
@@ -30,8 +30,12 @@ def get_window_rect_by_process(process_name):
         if win32gui.IsWindowVisible(hwnd):
             _, window_pid = win32process.GetWindowThreadProcessId(hwnd)
             if window_pid == pid:
-                rect = win32gui.GetWindowRect(hwnd)
-                return rect  # Return the rectangle directly
+                left, top, right, bottom = win32gui.GetWindowRect(hwnd)
+                client_rect = win32gui.GetClientRect(hwnd)
+                client_left, client_top = win32gui.ClientToScreen(hwnd, (0, 0))
+                client_right = client_left + client_rect[2]
+                client_bottom = client_top + client_rect[3]
+                return (client_left, client_top, client_right, client_bottom)  # Return client area coordinates
         return None
 
     windows = []
@@ -51,7 +55,7 @@ def on_press(key):
     try:
         if key.char == 'c':  # Replace 'c' with the key of your choice
             if window_rect is not None:
-                screenshot = ImageGrab.grab(bbox=window_rect)  # Capture only the specified window
+                screenshot = ImageGrab.grab(bbox=window_rect)  # Capture only the client area
                 screenshot_path = os.path.join(save_directory, f"screenshot_{screenshot_counter}.png")
                 screenshot.save(screenshot_path)
                 print(f"Screenshot {screenshot_counter} saved to {screenshot_path}")
@@ -67,7 +71,7 @@ def start_listener():
 
 if __name__ == "__main__":
     process_name = "ac_client.exe"  # Replace with your game's process name
-    window_rect = get_window_rect_by_process(process_name)
+    window_rect = get_window_client_rect_by_process(process_name)
 
     if window_rect is not None:
         print("Press 'c' to take a screenshot.")
