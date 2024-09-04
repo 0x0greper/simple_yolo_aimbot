@@ -46,6 +46,8 @@ Check if the correct version of PyTorch has been installed and confirm that your
 
 You should see output that confirms PyTorch is usingthe correct version and that it is using CUDA.
 
+![example](Capture1.PNG)
+
 8. Download and Install AssaultCube 1.2:
 Get the correct version of AssaultCube 1.2 from the official release page.
 
